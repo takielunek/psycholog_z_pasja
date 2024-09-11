@@ -16,14 +16,17 @@ const Header = () => {
             Usługi
           </h1>
           <p className="text-[18px] font-normal font-roboto text-gray700 mt-[20px]">
-            Przed umówieniem się na konsultacje proszę o zapoznanie się z
-            <span className="text-blue500"> regulaminem</span>.
+            Przed umówieniem się na konsultacje proszę o zapoznanie się z{" "}
+            <a href="/regulations" className="text-blue500">
+              regulaminem
+            </a>
+            .
           </p>
           <p className="text-[16px] font-normal font-roboto text-gray500 mt-[10px]">
-            Każda konsultacja trwa 50min. W przypadku spotkań online użycie
-            kamery internetowej nie jest obowiązkowe jednak jest zalecane
-            szczególnie, gdy są wskazania do dłuższej terapii i regularnych
-            spotkań.
+            Każda sesja trwa 50 minut chyba, że zostanie to ustalone inaczej. W
+            przypadku spotkań online użycie kamery internetowej nie jest
+            obowiązkowe jednak jest zalecane szczególnie, gdy są wskazania do
+            dłuższej terapii i regularnych spotkań.
           </p>
         </div>
       </div>
