@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* wrapper */
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1920px) {
+  .wrapper {
+    max-width: 1920px;
+  }
+}
+
+/* links  */
+
+.linkStyle {
+  position: relative;
+}
+
+.linkStyle:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%; 
+  transform: translateX(-50%);
+  position: absolute;
+  background: #9EF3FA;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+
+}
+
+.linkStyle:hover:after { 
+  width: 80%; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+/* list */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+/* input  */
+
+.allInputs:-internal-autofill-selected {
+  box-shadow: 0px 1000px #ffffff inset;
+}
+
+.allInputs:focus {
+  box-shadow: 0px 1000px #ffffff inset;
+}
+
+/* checkbox  */
+
+.checkbox {
+  display: none;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 6px 20px;
+}
+
+input[type="checkbox"]:before {
+  position: absolute;
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+}
+
+input[type="checkbox"]:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 13.5px;
+  height: 13.5px;
+  top: 1px;
+  background-color: #079fac;
+  border-radius: 3px;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+
+/* swiper  */
+
+.swiper {
+  width: 80%;
+  height: 253px;
+  margin-bottom: 100px;
+}
+
+.swiper-slide {
+  background: #e5e5e5;
+}
+
