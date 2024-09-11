@@ -34,7 +34,7 @@ const Header = () => {
       <div className="absolute top-[700px] xxs:top-[800px] xss:top-[980px] xs:top-[1050px] ss:top-[1150px] sm:top-[1200px] md:top-[1100px] xxxl:top-[740px] z-0 w-full text-center text-[14px] ss:text-[24px] font-normal tracking-[-3%] font-roboto text-gray900 px-[20px] xs:px-[50px]">
         <p>
           Witaj na stronie
-          <span className="text-blue600">Psycholog z Pasją.</span>
+          <span className="text-blue600"> Psycholog z Pasją.</span>
         </p>
         <p>
           Znajdziesz tu ciekawe i inspirujące treści dotyczące zdrowia{" "}
