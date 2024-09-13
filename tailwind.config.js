@@ -38,6 +38,7 @@ export default {
       xll: "1400px",
       xxl: "1500px",
       xxxl: "1800px",
+      xxxxl: "2000px",
     },
   },
   plugins: [],

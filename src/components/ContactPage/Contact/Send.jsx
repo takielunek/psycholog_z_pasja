@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 
 function Send() {
   const button =
-    "text-[18px] font-normal text-white bg-blue500 py-[12px] px-[24px] rounded-[16px] inline-block mt-[16px]";
+    "text-[16px] sm:text-[18px] font-normal text-white bg-blue500 border-[2px] border-white py-[12px] px-[24px] rounded-[16px] inline-block mt-[16px] hover:bg-white hover:text-blue500 hover:border-[2px] hover:border-blue500";
     const label = "text-[12px] font-normal text-gray901 font-roboto py-[3px]";
     const input =
       "border-[1px] border-gray300 px-[16px] py-[12px] rounded-r-[8px] rounded-bl-[8px] focus:outline-none allInputs";
@@ -21,7 +21,7 @@ function Send() {
 
   return (
     <div className="w-full xxl:w-[523px] mt-[100px] xxl:mt-0">
-      <p className="text-[28px] text-blue600 font-medium font-roboto">
+      <p className="text-[18px] sm:text-[28px] text-blue600 font-medium font-roboto">
         Szybki kontakt
       </p>
       <form
