@@ -4,6 +4,14 @@ import list from "../../../assets/list.svg";
 import grid from "../../../assets/grid.svg";
 
 const News = () => {
+
+  const box = "w-full md:w-[50%] xxl:w-[33%] xxxxl:w-[25%] flex flex-col items-center py-[24px]"
+  const title = "text-[16px] sm:text-[20px] font-medium font-roboto text-gray900 mt-[12px] sm:mt-[20px]"
+  const text = "text-[14px] sm:text-[16px] font-light font-roboto text-gray900 mt-[12px] sm:mt-[20px]"
+  const button = "text-[16px] font-normal font-roboto text-blue500 underline";
+  const img = "w-[304px] h-[160px] sm:w-[388px] sm:h-[220px] rounded-t-[20px]";
+
+  
   return (
     <div>
       <div className="z-0">
@@ -19,15 +27,17 @@ const News = () => {
               <button href="">Szkolenia [10]</button>
               <button href="">Artykuły [10]</button>
             </div>
-            <div className="flex flex-row gap-[16px]">
-              <p>Widok</p>
-              <div className="flex flex-row gap-[12px]">
-                <button>
-                  <img src={list} alt="" className="h-[24px] w-[24px]" />
-                </button>
-                <button>
-                  <img src={grid} alt="" className="h-[24px] w-[24px]" />
-                </button>
+            <div className="hidden md:block">
+              <div className="flex flex-row gap-[16px]">
+                <p>Widok</p>
+                <div className="flex flex-row gap-[12px]">
+                  <button>
+                    <img src={list} alt="" className="h-[24px] w-[24px]" />
+                  </button>
+                  <button>
+                    <img src={grid} alt="" className="h-[24px] w-[24px]" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -35,24 +45,24 @@ const News = () => {
             {news.map((news) => (
               <div
                 key={news.id}
-                className="w-full md:w-[50%] xxxxl:w-[25%] flex flex-col items-center py-[24px]"
+                className={`${box}`}
               >
                 <img
                   src={news.img}
                   alt=""
-                  className="w-[304px] h-[160px] sm:w-[388px] sm:h-[220px] rounded-t-[20px]"
+                  className={`${img}`}
                 />
                 <div className="w-[304px] sm:w-[388px]">
-                  <p className="text-[16px] sm:text-[20px] font-medium font-roboto text-gray900 mt-[12px] sm:mt-[20px]">
+                  <p className={`${title}`}>
                     {news.title}
                   </p>
-                  <p className="text-[14px] sm:text-[16px] font-light font-roboto text-gray900 mt-[12px] sm:mt-[20px]">
+                  <p className={`${text}`}>
                     {news.text}
                   </p>
                   <div className="mt-[16px] sm:mt-[32px]">
                     <a
                       href={news.link}
-                      className="text-[16px] font-normal font-roboto text-blue500 underline"
+                      className={`${button}`}
                     >
                       czytaj więcej &gt;
                     </a>

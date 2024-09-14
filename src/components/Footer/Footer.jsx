@@ -46,7 +46,11 @@ const Footer = () => {
         </div>
 
         <div className="hidden lg:block">
-          <a href="">
+          <a
+            href="https://www.facebook.com/psychologzpasja"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={grayFacebook} alt="Facebook icon" />
           </a>
         </div>
