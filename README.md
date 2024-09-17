@@ -16,5 +16,8 @@ npm run dev
 * React
 * React Hook Form
 * React Icons
+* React Email
+* AOS
 * Swiper
+* SendGrid
 * Vite

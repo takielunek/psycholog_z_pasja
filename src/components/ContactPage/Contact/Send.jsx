@@ -1,13 +1,14 @@
+
 import { useForm } from "react-hook-form";
 
 function Send() {
   const button =
     "text-[16px] sm:text-[18px] font-normal text-white bg-blue500 border-[2px] border-white py-[12px] px-[24px] rounded-[16px] inline-block mt-[16px] hover:bg-white hover:text-blue500 hover:border-[2px] hover:border-blue500";
-    const label = "text-[12px] font-normal text-gray901 font-roboto py-[3px]";
-    const input =
-      "border-[1px] border-gray300 px-[16px] py-[12px] rounded-r-[8px] rounded-bl-[8px] focus:outline-none allInputs";
-    const div = "flex flex-col"
-    const error = "text-red text-[12px] font-normal font-roboto mt-[5px]";
+  const label = "text-[12px] font-normal text-gray901 font-roboto py-[3px]";
+  const input =
+    "border-[1px] border-gray300 px-[16px] py-[12px] rounded-r-[8px] rounded-bl-[8px] focus:outline-none allInputs";
+  const div = "flex flex-col";
+  const error = "text-red text-[12px] font-normal font-roboto mt-[5px]";
 
   const {
     register,
@@ -15,8 +16,22 @@ function Send() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = () => {
+
+
+
+
+
+
+
+
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSubmit(onSubmit)();
+    }
   };
 
   return (
@@ -24,14 +39,17 @@ function Send() {
       <p className="text-[18px] sm:text-[28px] text-blue600 font-medium font-roboto">
         Szybki kontakt
       </p>
+
       <form
         onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        onKeyPress={handleKeyPress}
         className="flex flex-col gap-[24px]"
       >
         {/* name */}
         <div className={`${div}`}>
           <label htmlFor="name" className={`${label}`}>
-            Name
+            Imię i nazwisko
           </label>
           <input
             id="name"
@@ -46,7 +64,7 @@ function Send() {
         {/* email */}
         <div className={`${div}`}>
           <label htmlFor="email" className={`${label}`}>
-            Email
+            E-mail
           </label>
           <input
             id="email"
@@ -56,6 +74,7 @@ function Send() {
               required: "Wpisz swój adres e-mail.",
               pattern: {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                message: "Wpisz poprawny adres e-mail.",
               },
             })}
             className={`${input}`}
@@ -67,7 +86,7 @@ function Send() {
         {/* phone */}
         <div className={`${div}`}>
           <label htmlFor="phone" className={`${label}`}>
-            Phone Number
+            Telefon
           </label>
           <input
             id="phone"
@@ -77,6 +96,7 @@ function Send() {
               required: "Wpisz swój numer telefonu.",
               pattern: {
                 value: /^[0-9]{9}$/,
+                message: "Numer telefonu musi mieć 9 cyfr.",
               },
             })}
             className={`${input}`}
@@ -88,7 +108,7 @@ function Send() {
         {/* message */}
         <div className={`${div}`}>
           <label htmlFor="message" className={`${label}`}>
-            Message
+            Treść wiadomości
           </label>
           <textarea
             id="message"
@@ -96,6 +116,7 @@ function Send() {
             {...register("message", {
               required: "Wpisz treść wiadomości.",
             })}
+            rows="4"
             className={`${input}`}
           ></textarea>
           {errors.message && (
@@ -110,6 +131,7 @@ function Send() {
             {...register("terms", {
               required: "Proszę zaakceptować ....",
             })}
+            className="my-[6px] mx-[20px]"
           />
           <div>
             <label
@@ -125,11 +147,9 @@ function Send() {
           </div>
         </div>
         <div>
-          <a href="">
-            <button type="submit" className={`${button}`}>
-              Wyślij wiadomość
-            </button>
-          </a>
+          <button type="submit" className={`${button}`}>
+            Wyślij wiadomość
+          </button>
         </div>
       </form>
     </div>

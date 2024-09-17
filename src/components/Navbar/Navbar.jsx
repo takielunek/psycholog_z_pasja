@@ -6,20 +6,15 @@ import menu from "../../assets/menu.svg";
 import close from "../../assets/close.svg";
 
 const Navbar = () => {
-
-
   const desktopLink =
     "text-white hover:text-blue100 text-[18px] font-normal font-roboto hidden sm:block linkStyle";
   const mobileLink =
     "text-white hover:text-blue100 text-[18px] font-normal font-roboto";
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-30 bg-blue600">
+    <div className="absolute top-0 left-0 right-0 z-10 bg-blue600">
       <div className="relative z-10 wrapper flex justify-between py-[13px] xl:py-[9px] px-[20px] xs:px-[50px] xl:px-[100px] xxl:px-[160.5px]">
         <a href="/">
           <img
@@ -77,9 +72,8 @@ const Navbar = () => {
 
       <div
         className={` ${
-          isMenuOpen ? "opacity-100" : "opacity-0"
+          isMenuOpen ? "block" : "hidden"
         } absolute bg-blue600 left-0 right-0 top-[72px] h-[100vh] block sm:hidden`}
-        style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
       >
         <div className="flex flex-col justify-start ml-[33px] gap-[32px] pt-[70px]">
           <a className={`${mobileLink}`} href="/">

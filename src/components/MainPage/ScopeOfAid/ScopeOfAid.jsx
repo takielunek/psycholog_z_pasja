@@ -1,10 +1,13 @@
-import chevron from "../../../assets/chevron.png"
-import {aidTexts} from "./index.js"
+import { useState } from "react";
+import chevron from "../../../assets/chevron.png";
+import { aidTexts } from "./index.js";
+import Modal from "../../Modal/Modal";
 
 const ScopeOfAid = () => {
-
   const button =
     "text-[16px] sm:text-[18px] font-roboto text-white font-normal bg-blue500 hover:bg-white hover:text-blue500 hover:border-[2px] hover:border-blue500 py-[12px] px-[24px] rounded-[16px]";
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="wrapper px-[10px] xxs:px-[15px] xs:px-[50px] xl:px-[100px] xxl:px-[160.5px]">
@@ -53,9 +56,15 @@ const ScopeOfAid = () => {
         </ul>
       </div>
 
-      <a href="/enroll" className={`${button}`}>
-        Umów konsultacje
-      </a>
+      <button
+        className={`${button}`}
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      >
+        Umów konsultację
+      </button>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
 };

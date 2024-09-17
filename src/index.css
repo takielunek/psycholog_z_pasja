@@ -4,7 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -27,24 +28,23 @@ html, body {
   position: relative;
 }
 
-.linkStyle:after {    
+.linkStyle:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
   display: block;
   height: 2px;
-  left: 50%; 
+  left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  background: #9EF3FA;
+  background: #9ef3fa;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
-
 }
 
-.linkStyle:hover:after { 
-  width: 80%; 
-  left: 50%; 
+.linkStyle:hover:after {
+  width: 80%;
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -76,7 +76,6 @@ input[type="checkbox"] {
   cursor: pointer;
   width: 16px;
   height: 16px;
-  margin: 6px 20px;
 }
 
 input[type="checkbox"]:before {
@@ -122,3 +121,76 @@ input[type="checkbox"]:checked:after {
   background: #e5e5e5;
 }
 
+/* modal  */
+
+.modalBackground {
+  background: rgba(213, 220, 226, 0.8);
+}
+
+/* select  */
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select option:disabled {
+  color: #808080;
+}
+
+select:valid {
+  color: #000000;
+}
+
+select:invalid {
+  color: #999999;
+}
+
+/* radio - fifth step */
+
+input[type="radio"] {
+  appearance: none;
+  background-color: #fbfbfc;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid #000000;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid #000000;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fbfbfc;
+}
+
+input[type="radio"]:checked {
+  background-color: #ffffff;
+}
+
+input[type="radio"]:checked::before {
+  background-color: #05717b;
+  border: 1px solid #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

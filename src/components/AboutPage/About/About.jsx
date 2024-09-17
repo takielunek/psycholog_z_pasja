@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Header from "../Header/Header";
 import martyna2 from "../../../assets/martyna2.png";
-import SwiperComponent from "./SwiperComponent";
+// import SwiperComponent from "./SwiperComponent";
 import { aboutTexts } from "./index.js";
+import Modal from "../../Modal/Modal";
 
 const About = () => {
   const button =
@@ -11,6 +13,8 @@ const About = () => {
   const text1 =
     "text-[14px] sm:text-[20px] font-normal font-roboto text-gray900 mt-[24px]";
   const text2 = "text-[20px] xss:text-[24px] font-medium font-roboto";
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="overflow-x-hidden">
@@ -37,9 +41,15 @@ const About = () => {
               </a>
               . {aboutTexts.paragraph2}
             </p>
-            <a href="/enroll" className={`${button} mt-[40px] mb-[60px]`}>
+            <button
+              className={`${button} mt-[40px] mb-[60px]`}
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
               Umów konsultację
-            </a>
+            </button>
+            <Modal open={isOpen} onClose={() => setIsOpen(false)} />
             <h3 className={`${text}`}>Edukacja i doświadczenie</h3>
             <p className={`${text1}`}>
               {aboutTexts.paragraph3} <br /> {aboutTexts.paragraph31}
@@ -62,7 +72,7 @@ const About = () => {
         </div>
       </div>
 
-      <SwiperComponent />
+      {/* <SwiperComponent /> */}
     </div>
   );
 };

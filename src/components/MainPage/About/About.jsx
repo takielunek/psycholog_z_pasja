@@ -8,11 +8,11 @@ const About = () => {
     "text-[16px] sm:text-[18px] font-normal text-blue500 font-roboto bg-white hover:bg-blue700 hover:text-white hover:border-[2px] px-[24px] py-[12px] rounded-[16px]";
 
   return (
-    <div className="wrapper z-10 pt-[180px] sm:pt-[300px] xl:pt-[200px] pb-[100px] sm:pb-[200px] px-[0px] xs:px-[50px] lg:px-[100px] xxl:px-[160.5px]">
+    <div className="wrapper z-10 pt-[180px] sm:pt-[300px] xll:pt-[200px] pb-[100px] sm:pb-[200px] px-[0px] xs:px-[50px] lg:px-[100px] xxl:px-[160.5px]">
       <div className="relative grid xl:justify-items-end px-[15px] xxs:px-[20px] xs:px-[40px] sm:px-[60px] md:px-[120px] rounded-[32px]">
         <div className="absolute inset-0 bg-gradient-to-r from-blue700 via-blue700 to-blue500 rounded-[32px] opacity-85 z-10"></div>
 
-        <div className="relative z-20 pb-[30px] xss:pb-[63px] flex flex-col xl:w-[45%] xxl:w-[55%] pt-[180px] sm:pt-[280px] xl:pt-[63px]">
+        <div className="relative z-20 pb-[30px] xss:pb-[63px] flex flex-col xll:w-[45%] xxl:w-[55%] pt-[180px] sm:pt-[280px] xll:pt-[63px]">
           <p className="text-[20px] sm:text-[44px] font-medium text-white font-roboto">
             O mnie
           </p>
@@ -29,10 +29,7 @@ const About = () => {
             pełnej szacunku, dyskrecji, skupienia, bez oceniania.
           </p>
           <div>
-            <a
-              href="/about"
-              className={`${button}`}
-            >
+            <a href="/about" className={`${button}`}>
               Czytaj więcej
             </a>
           </div>
@@ -43,25 +40,25 @@ const About = () => {
           <img
             src={Ellipse5}
             alt="elipse"
-            className="absolute z-0 h-[510px] sm:h-[780px] w-auto max-w-none top-[-268px] sm:top-[-425px] left-[50%] translate-x-[-50%] rotate-[270deg] block xl:hidden"
+            className="absolute z-0 h-[510px] sm:h-[780px] w-auto max-w-none top-[-268px] sm:top-[-425px] left-[50%] translate-x-[-50%] rotate-[270deg] block xll:hidden"
           />
         </div>
 
         <img
           src={martyna3}
           alt="Pani Martyna Borawska"
-          className="absolute h-[330px] sm:h-[500px] top-[-155px] sm:top-[-250px] left-[50%] translate-x-[-50%] z-10 block xl:hidden"
+          className="absolute h-[330px] sm:h-[500px] top-[-155px] sm:top-[-250px] left-[50%] translate-x-[-50%] z-10 block xll:hidden"
         />
         {/* desktop  */}
         <img
           src={Ellipse5}
           alt="elipse"
-          className="absolute z-0 bottom-[-330px] left-[-330px] rotate-180 hidden xl:block"
+          className="absolute z-0 bottom-[-330px] left-[-330px] rotate-180 hidden xll:block"
         />
         <img
           src={martyna}
           alt="Pani Martyna Borawska"
-          className="absolute h-[630px] bottom-0 xl:left-[70px] z-10 hidden xl:block"
+          className="absolute h-[630px] bottom-0 xl:left-[70px] z-10 hidden xll:block"
         />
       </div>
     </div>
