@@ -21,7 +21,7 @@ const About = () => {
       <div className="z-0">
         <Header />
       </div>
-
+      
       <div className="mt-[130px] xs:mt-[200px] md:mt-[250px] mb-[100px] relative z-10">
         <div className="wrapper px-[10px] xxs:px-[15px] xs:px-[50px] xl:px-[100px] xxl:pl-[160.5px] flex flex-col xll:flex-row gap-[40px] sm:gap-[80px]">
           <div className="flex justify-start w-[52%] xll:w-[32%]">
@@ -49,7 +49,9 @@ const About = () => {
             >
               Umów konsultację
             </button>
+
             <Modal open={isOpen} onClose={() => setIsOpen(false)} />
+
             <h3 className={`${text}`}>Edukacja i doświadczenie</h3>
             <p className={`${text1}`}>
               {aboutTexts.paragraph3} <br /> {aboutTexts.paragraph31}

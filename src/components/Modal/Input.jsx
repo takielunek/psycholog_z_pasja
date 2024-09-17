@@ -27,6 +27,7 @@ const Input = ({
   const div = "flex flex-col";
   const error = "text-red text-[12px] font-normal font-roboto mt-[5px]";
 
+  
   return (
     <div className={`${div}`}>
       <label htmlFor={valueName} className={`${label}`}>
@@ -38,6 +39,13 @@ const Input = ({
         placeholder={placeholder}
         {...register(valueName, { ...validation, required: true })}
         className={`${input}`}
+        style={
+          errors && Object.hasOwn(errors, valueName)
+            ? {
+                border: "1px solid red",
+              }
+            : {}
+        }
       />
       {errors && Object.hasOwn(errors, valueName) && (
         <p className={`${error} ml-[15px]`}>{errorMessage}</p>

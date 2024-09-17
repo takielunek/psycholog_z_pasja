@@ -28,6 +28,13 @@ const DropdownInput = ({ register, errors }) => {
           required: "Wybierz rodzaj konsultacji.",
         })}
         className={`${input}`}
+        style={
+          errors.consultation && (errors)
+            ? {
+                border: "1px solid red",
+              }
+            : {}
+        }
         defaultValue=""
         required
       >
@@ -37,12 +44,16 @@ const DropdownInput = ({ register, errors }) => {
         <option value="" disabled>
           Wybierz rodzaj konsultacji
         </option>
-        <option value="">Konsultacja psychologiczna</option>
-        <option value="">
+        <option value="Konsultacja psychologiczna">
+          Konsultacja psychologiczna
+        </option>
+        <option value="Konsultacja psychologiczna z dojazdem do pacjenta">
           Konsultacja psychologiczna z dojazdem do pacjenta
         </option>
-        <option value="">Terapia psychologiczna</option>
-        <option value="">Szkolenie / Warsztat rozwojowy</option>
+        <option value="Terapia psychologiczna">Terapia psychologiczna</option>
+        <option value="Szkolenie / Warsztat rozwojowy">
+          Szkolenie / Warsztat rozwojowy
+        </option>
       </select>
 
       <div className="absolute bottom-[20%] right-[10px] flex items-center ">

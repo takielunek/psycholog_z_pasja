@@ -23,6 +23,13 @@ const DatePickerInput = ({ register, errors }) => {
         placeholder=" Wybierz datę"
         {...register("date", { required: "Wybierz datę konsultacji" })}
         className={`${input}`}
+        style={
+          errors.date && errors
+            ? {
+                border: "1px solid red",
+              }
+            : {}
+        }
       />
       <p className="text-[12px] font-roboto font-normal text-gray901 mt-[10px]">
         DD-MM-RRRR

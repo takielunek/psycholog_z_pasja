@@ -125,6 +125,12 @@ input[type="checkbox"]:checked:after {
 
 .modalBackground {
   background: rgba(213, 220, 226, 0.8);
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* select  */
@@ -154,7 +160,7 @@ input[type="radio"] {
   background-color: #fbfbfc;
   width: 18px;
   height: 18px;
-  border: 2.5px solid #000000;
+  border: 2px solid #000000;
   border-radius: 50%;
   display: grid;
   place-content: center;

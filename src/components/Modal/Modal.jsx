@@ -23,11 +23,18 @@ const Modal = ({ open, onClose }) => {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
+    reset,
   } = useForm();
 
   const onSubmit = (date) => {
     console.log(date);
   };
+
+   const handleClose = () => {
+     reset(); 
+     onClose(); 
+   };
 
   if (!open) return null;
 
@@ -38,8 +45,11 @@ const Modal = ({ open, onClose }) => {
     }
   };
 
+  const allFormData = watch();
+  console.log(allFormData);
+
   return (
-    <div className="fixed top-0 bottom-0 right-0 left-0 modalBackground z-50 pt-[150px]">
+    <div className="absolute top-0 bottom-0 right-0 left-0 z-50 pt-[150px]">
       <div className="wrapper px-[10px] xxs:px-[15px] ss:px-[50px] sm:px-[89px] bg-white w-full sm:w-[701px]">
         <div className="flex justify-end cursor-pointer">
           <svg
@@ -49,7 +59,7 @@ const Modal = ({ open, onClose }) => {
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
             className="my-[20px] sm:mt-[29px] text-gray900 hover:text-blue600"
-            onClick={onClose}
+            onClick={handleClose}
           >
             <path d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" />
           </svg>
@@ -91,7 +101,9 @@ const Modal = ({ open, onClose }) => {
               <div className="custom-radio flex gap-[8px]">
                 <input
                   type="radio"
-                  {...register("time")}
+                  {...register("time", {
+                    required: "Wybierz przedział czasowy",
+                  })}
                   value="8:00-14:00"
                   id="8:00-14:00"
                 />
@@ -105,7 +117,9 @@ const Modal = ({ open, onClose }) => {
               <div className="custom-radio flex gap-[8px]">
                 <input
                   type="radio"
-                  {...register("time")}
+                  {...register("time", {
+                    required: "Wybierz przedział czasowy",
+                  })}
                   value="15:00-19:00"
                   id="15:00-19:00"
                 />
@@ -117,6 +131,9 @@ const Modal = ({ open, onClose }) => {
                 </p>
               </div>
             </div>
+            {errors.time && (
+              <p className={`${error} ml-[15px]`}>{errors.time.message}</p>
+            )}
           </div>
 
           {/* message */}
@@ -132,6 +149,13 @@ const Modal = ({ open, onClose }) => {
               })}
               rows="4"
               className={`${input}`}
+              style={
+                errors.message && errors
+                  ? {
+                      border: "1px solid red",
+                    }
+                  : {}
+              }
             ></textarea>
             {errors.message && (
               <p className={`${error} ml-[15px]`}>{errors.message.message}</p>
@@ -142,6 +166,7 @@ const Modal = ({ open, onClose }) => {
             <input
               id="terms"
               type="checkbox"
+              value="Zgoda"
               {...register("terms", {
                 required: "Zaakceptuj....",
               })}
