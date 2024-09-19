@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import { news } from "./index.js";
+import { news } from "../../AllNewPosts/Posts/index.js";
 
 const News = () => {
   const box =

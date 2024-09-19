@@ -1,9 +1,13 @@
 import chevron from "../../../assets/chevron.png";
-import { news } from "./index.js";
+import { news } from "../../AllNewPosts/Posts/index.js";
 
 const News = () => {
   return (
-    <div className="wrapper px-[10px] xxs:px-[15px] xs:px-[50px] xl:px-[100px] xxl:px-[160.5px]">
+    <div
+      className="wrapper px-[10px] xxs:px-[15px] xs:px-[50px] xl:px-[100px] xxl:px-[160.5px]"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <div className=" flex flex-row justify-between mt-[100px]">
         <p className="text-[20px] sm:text-[44px] font-medium font-roboto text-blue700 tracking-[-.02em]">
           Aktualności
@@ -29,7 +33,7 @@ const News = () => {
       </div>
       {/* POSTS  */}
       <div className="flex flex-wrap mt-[20px]">
-        {news.map((news) => (
+        {news.slice(0, 4).map((news) => (
           <div
             key={news.id}
             className="w-full md:w-[50%] xxll:w-[33%] xxxxl:w-[25%] flex flex-col items-center py-[24px]"

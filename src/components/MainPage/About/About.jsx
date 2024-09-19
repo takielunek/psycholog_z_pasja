@@ -8,7 +8,11 @@ const About = () => {
     "text-[16px] sm:text-[18px] font-normal text-blue500 font-roboto bg-white hover:bg-blue700 hover:text-white hover:border-[2px] px-[24px] py-[12px] rounded-[16px]";
 
   return (
-    <div className="wrapper z-10 pt-[180px] sm:pt-[300px] xll:pt-[200px] pb-[100px] sm:pb-[200px] px-[0px] xs:px-[50px] lg:px-[100px] xxl:px-[160.5px]">
+    <div
+      className="wrapper z-10 pt-[180px] sm:pt-[300px] xll:pt-[200px] pb-[100px] sm:pb-[200px] px-[0px] xs:px-[50px] lg:px-[100px] xxl:px-[160.5px]"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <div className="relative grid xl:justify-items-end px-[15px] xxs:px-[20px] xs:px-[40px] sm:px-[60px] md:px-[120px] rounded-[32px]">
         <div className="absolute inset-0 bg-gradient-to-r from-blue700 via-blue700 to-blue500 rounded-[32px] opacity-85 z-10"></div>
 

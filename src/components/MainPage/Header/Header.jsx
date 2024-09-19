@@ -29,6 +29,7 @@ const textDiv =
         alt=""
         className="absolute top-[220px] xss:top-[270px] xl:top-[300px] right-[-30px] xl:right-0 z-0"
       />
+
       <img
         src={leftHand}
         alt=""
@@ -40,7 +41,9 @@ const textDiv =
         className="absolute top-[330px] xxs:top-[360px] xss:top-[430px] xs:top-[450px] ss:top-[510px] sm:top-[750px] md:top-[720px] xll:top-[820px] xxl:top-[950px] xxxl:top-[300px] right-0 z-0 w-[55%] xxxl:w-[40%]"
       />
 
-      <div className={`${quoteDiv} block sm:hidden`}>
+      <div
+        className={`${quoteDiv} block sm:hidden`}
+      >
         <p className={`${quote}`}>
           Warunkiem przemiany jest wytrwałość. <br /> Każda trwała przemiana
           wymaga <br />

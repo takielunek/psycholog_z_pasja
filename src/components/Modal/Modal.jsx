@@ -1,4 +1,5 @@
-import { useState, useForm } from "react-hook-form";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import Input from "./Input";
 import DropdownInput from "./DropdownInput";
 import DatePickerInput from "./DatePickerInput";
@@ -27,14 +28,14 @@ const Modal = ({ open, onClose }) => {
     reset,
   } = useForm();
 
-   const [emailStatus, setEmailStatus] = useState("");
+  const [emailStatus, setEmailStatus] = useState("");
 
-   const onSubmit = async (date) => {
-     const emailData = {
-       from: "karolina.anna.jesionek@gmail.com",
-       to: "karolina-jesionek@wp.pl",
-       subject: "Nowa konsultacja",
-       html: `
+  const onSubmit = async (date) => {
+    const emailData = {
+      from: "karolina.anna.jesionek@gmail.com",
+      to: "karolina-jesionek@wp.pl",
+      subject: "Nowa konsultacja",
+      html: `
       <p>Imię i nazwisko: ${date.name}</p>
       <p>E-mail: ${date.email}</p>
       <p>Telefon: ${date.phone}</p>
@@ -44,34 +45,34 @@ const Modal = ({ open, onClose }) => {
       <br />
       <p>Treść wiadomości: <br /> ${date.message}</p>
     `,
-     };
+    };
 
-     try {
-       const response = await fetch("http://localhost:5000/api/send-email", {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(emailData),
-       });
+    try {
+      const response = await fetch("http://localhost:5000/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(emailData),
+      });
 
-       if (response.ok) {
-         setEmailStatus(
-           <span className="text-blue500">Wiadomość została wysłana!</span>
-         );
-       } else {
-         setEmailStatus(
-           <span className="text-red">Nie udało się wysłać wiadomości.</span>
-         );
-       }
-     } catch {
-       setEmailStatus(
-         <span className="text-red">
-           Wystąpił błąd podczas wysyłania wiadomości e-mail.
-         </span>
-       );
-     }
-   };
+      if (response.ok) {
+        setEmailStatus(
+          <span className="text-blue500">Wiadomość została wysłana!</span>
+        );
+      } else {
+        setEmailStatus(
+          <span className="text-red">Nie udało się wysłać wiadomości.</span>
+        );
+      }
+    } catch {
+      setEmailStatus(
+        <span className="text-red">
+          Wystąpił błąd podczas wysyłania wiadomości e-mail.
+        </span>
+      );
+    }
+  };
 
   const handleClose = () => {
     reset();
@@ -91,7 +92,7 @@ const Modal = ({ open, onClose }) => {
   console.log(allFormData);
 
   return (
-    <div className="absolute top-0 bottom-0 right-0 left-0 z-50 pt-[0px]">
+    <div className="absolute top-[-200px] bottom-0 right-0 left-0 z-50 pt-[0px]">
       <div className="wrapper px-[10px] xxs:px-[15px] ss:px-[50px] sm:px-[89px] bg-white w-full sm:w-[701px]">
         <div className="flex justify-end cursor-pointer">
           <svg

@@ -5,6 +5,7 @@ import ServicesPage from "./pages/ServicesPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import RegulationsPage from "./pages/RegulationsPage";
+import FirstPost from "./pages/FirstPost";
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoutes = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/regulations" element={<RegulationsPage />} />
+        <Route path="/post1" element={<FirstPost />} />
       </Routes>
     </BrowserRouter>
   );

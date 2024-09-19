@@ -9,9 +9,9 @@ export const news = [
   {
     id: "1",
     img: news1,
-    title: "OCD Zaburzenia obsesyjno-kompulsyjne",
-    text: "OCD uważa się za chorobę cywilizacyjną, gdzie za główną przyczynę uznaje się stres związany ze wzrastającym tempem życia.",
-    link: "/example1",
+    title: "Superwizja co to jest?",
+    text: "Poddaje swoją pracę superwizji. A co to oznacza dla Ciebie? Pacjenta/klienta? Czy to jest ważne dla Ciebie?",
+    link: "/post1",
   },
   {
     id: "2",

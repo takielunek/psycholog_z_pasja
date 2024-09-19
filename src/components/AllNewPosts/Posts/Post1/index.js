@@ -1,0 +1,17 @@
+export const post1Texts = {
+  list1: "Poddaje swoją pracę superwizji.",
+  list2: "A co to oznacza dla Ciebie?",
+  list3: "Pacjenta/klienta?",
+  list4: "Czy to jest ważne dla Ciebie?",
+  list5: "Tak i to bardzo!",
+  paragraph1: "Zacznę od definicji, a następnie odpowiem na powyższe pytania.",
+  paragraph2: "„Pracuje pod stałą superwizją” to informacja, którą można znaleźć w opisie profesjonalnego terapeuty. Niektórzy superwizję potocznie określają jako „terapię terapii”",
+  paragraph3: " Superwizja to spotkania jednego terapeuty lub grupy terapeutów z bardziej doświadczonym, cenionym psychoterapeutą.",
+  paragraph4: "Najistotniejsze obszary superwizji:",
+  list6: "służący rozwojowi kompetencji i zasobów terapeuty,",
+  list7: " umożliwia kształtowanie w sobie odpowiedniej postawy tak by upewnić się, czy postępowanie z Pacjentem jest zgodne z zasadami sztuki terapeutycznej,",
+  list8: "wzmacnia, czyli „regeneruje siły” terapeuty poddającego się superwizji.",
+  paragraph5: "Podsumowując i odpowiadając na wcześniej postawione pytania:",
+  paragraph6: "Trafiając do terapeuty, który regularnie poddaje swoją pracę superwizji masz pewność, że jesteś w dobrych rękach. Taki terapeuta jest świadomy swoich ograniczeń i możliwych błędów. Pracuje nad sobą, by w swojej pracy wyeliminować jak najwięcej czynników utrudniających terapię. Stale sprawdza, czy jego techniki pracy i sposoby działania są prawidłowe i skuteczne.",
+  paragraph7: "Ściskam i jak zawsze zapraszam na konsultacje.",
+};

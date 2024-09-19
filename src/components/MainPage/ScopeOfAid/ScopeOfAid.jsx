@@ -10,7 +10,11 @@ const ScopeOfAid = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="wrapper px-[10px] xxs:px-[15px] xs:px-[50px] xl:px-[100px] xxl:px-[160.5px]">
+    <div
+      className="wrapper px-[10px] xxs:px-[15px] xs:px-[50px] xl:px-[100px] xxl:px-[160.5px]"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <div className=" flex flex-row justify-between">
         <p className="text-[20px] sm:text-[44px] font-medium font-roboto text-blue700 tracking-[-.02em]">
           {aidTexts.title}

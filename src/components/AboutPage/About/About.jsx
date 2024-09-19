@@ -21,7 +21,7 @@ const About = () => {
       <div className="z-0">
         <Header />
       </div>
-      
+
       <div className="mt-[130px] xs:mt-[200px] md:mt-[250px] mb-[100px] relative z-10">
         <div className="wrapper px-[10px] xxs:px-[15px] xs:px-[50px] xl:px-[100px] xxl:pl-[160.5px] flex flex-col xll:flex-row gap-[40px] sm:gap-[80px]">
           <div className="flex justify-start w-[52%] xll:w-[32%]">
@@ -36,7 +36,7 @@ const About = () => {
             <h3 className={`${text}`}>mgr Martyna Borawska</h3>
             <p className={`${text1}`}>
               {aboutTexts.paragraph1} &nbsp;
-              <a href="" className="text-blue700 underline">
+              <a href="/post1" className="text-blue700 underline">
                 ( co to oznacza dla Ciebie jako klienta? )
               </a>
               . {aboutTexts.paragraph2}

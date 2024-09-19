@@ -1,5 +1,4 @@
 import AllRoutes from "./AllRoutes.jsx";
-import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,7 +13,6 @@ function App() {
   return (
     <div>
       <AllRoutes />
-      <Footer />
     </div>
   );
 }
