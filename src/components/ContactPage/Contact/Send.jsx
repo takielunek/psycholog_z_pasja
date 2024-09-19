@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 function Send() {
@@ -16,15 +16,39 @@ function Send() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {
+  const [emailStatus, setEmailStatus] = useState("");
 
+  const onSubmit = async (date) => {
+    const emailData = {
+      from: "karolina.anna.jesionek@gmail.com",
+      to: "karolina-jesionek@wp.pl",
+      subject: "Nowa konsultacja",
+      html: `
+      <p>Imię i nazwisko: ${date.name}</p>
+      <p>E-mail: ${date.email}</p>
+      <p>Telefon: ${date.phone}</p>
+      <br />
+      <p>Treść wiadomości: ${date.message}</p>
+    `,
+    };
 
+    try {
+      const response = await fetch("http://localhost:5000/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(emailData),
+      });
 
-
-
-
-
-
+      if (response.ok) {
+        setEmailStatus("Email sent successfully!");
+      } else {
+        setEmailStatus("Failed to send email.");
+      }
+    } catch {
+      setEmailStatus("Error occurred while sending email.");
+    }
   };
 
   const handleKeyPress = (event) => {
@@ -150,6 +174,7 @@ function Send() {
           <button type="submit" className={`${button}`}>
             Wyślij wiadomość
           </button>
+          {emailStatus && <p>{emailStatus}</p>}
         </div>
       </form>
     </div>

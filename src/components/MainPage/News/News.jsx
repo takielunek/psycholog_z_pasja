@@ -32,7 +32,7 @@ const News = () => {
         {news.map((news) => (
           <div
             key={news.id}
-            className="w-full md:w-[50%] xxxxl:w-[25%] flex flex-col items-center py-[24px]"
+            className="w-full md:w-[50%] xxll:w-[33%] xxxxl:w-[25%] flex flex-col items-center py-[24px]"
           >
             <img
               src={news.img}

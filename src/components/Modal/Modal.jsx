@@ -31,10 +31,10 @@ const Modal = ({ open, onClose }) => {
     console.log(date);
   };
 
-   const handleClose = () => {
-     reset(); 
-     onClose(); 
-   };
+  const handleClose = () => {
+    reset();
+    onClose();
+  };
 
   if (!open) return null;
 
@@ -49,7 +49,7 @@ const Modal = ({ open, onClose }) => {
   console.log(allFormData);
 
   return (
-    <div className="absolute top-0 bottom-0 right-0 left-0 z-50 pt-[150px]">
+    <div className="absolute top-0 bottom-0 right-0 left-0 z-50 pt-[0px]">
       <div className="wrapper px-[10px] xxs:px-[15px] ss:px-[50px] sm:px-[89px] bg-white w-full sm:w-[701px]">
         <div className="flex justify-end cursor-pointer">
           <svg

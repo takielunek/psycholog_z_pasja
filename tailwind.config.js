@@ -37,6 +37,7 @@ export default {
       xl: "1200px",
       xll: "1400px",
       xxl: "1500px",
+      xxll: "1600px",
       xxxl: "1800px",
       xxxxl: "2000px",
     },
