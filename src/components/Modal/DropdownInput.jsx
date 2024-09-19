@@ -56,7 +56,7 @@ const DropdownInput = ({ register, errors }) => {
         </option>
       </select>
 
-      <div className="absolute bottom-[20%] right-[10px] flex items-center ">
+      <div className="absolute bottom-[20%] right-[15px] flex items-center ">
         <IoChevronDown className={`${isOpen ? "rotate-180" : "rotate-0"} `} />
       </div>
     </div>

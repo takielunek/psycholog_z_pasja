@@ -1,7 +1,6 @@
 import blueLogo from "../../assets/blueLogo.svg";
 import phone from "../../assets/phone.svg";
 import email from "../../assets/email.svg";
-import grayFacebook from "../../assets/grayFacebook.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

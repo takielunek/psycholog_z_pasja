@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Header from "../Header/Header";
-import {servicesTexts} from "./index.js"
+import { servicesTexts } from "./index.js";
+import Modal from "../Modal/Modal";
 
 const PsychologistServices = () => {
   const box =
@@ -10,10 +12,13 @@ const PsychologistServices = () => {
   const text2 =
     "text-[14px] sm:text-[16px] font-normal text-gray800 xxxl:px-[60px] mb-[90px]";
   const price = "text-[20px] sm:text-[24px] font-medium text-blue500";
- const button =
-   "text-[16px] sm:text-[18px] font-roboto text-white font-normal bg-blue500 hover:bg-grayBg hover:text-blue500 hover:border-[2px] hover:border-blue500 py-[12px] px-[24px] rounded-[16px]";
+  const button =
+    "text-[16px] sm:text-[18px] font-roboto text-white font-normal bg-blue500 hover:bg-grayBg hover:text-blue500 hover:border-[2px] hover:border-blue500 py-[12px] px-[24px] rounded-[16px]";
 
-    const buttonDiv = "absolute left-0 right-0 flex justify-center bottom-[40px]";
+  const buttonDiv = "absolute left-0 right-0 flex justify-center bottom-[40px]";
+
+  const [isOpen, setIsOpen] = useState(false);
+    const [selectedConsultation, setSelectedConsultation] = useState(""); 
 
   return (
     <div>
@@ -28,9 +33,15 @@ const PsychologistServices = () => {
             <p className={`${price} py-[12px] sm:py-[24px]`}>150 zł</p>
             <p className={`${text2}`}>{servicesTexts.paragraph1}</p>
             <div className={`${buttonDiv}`}>
-              <a href="/enroll" className={`${button}`}>
+              <button
+                className={`${button}`}
+                onClick={() => {
+                  setSelectedConsultation(servicesTexts.title1);
+                  setIsOpen(true);
+                }}
+              >
                 Umów konsultację
-              </a>
+              </button>
             </div>
           </div>
 
@@ -42,9 +53,15 @@ const PsychologistServices = () => {
             </p>
             <p className={`${text2}`}>{servicesTexts.paragraph2}</p>
             <div className={`${buttonDiv}`}>
-              <a href="/enroll" className={`${button}`}>
+              <button
+                className={`${button}`}
+                onClick={() => {
+                  setSelectedConsultation(servicesTexts.title2);
+                  setIsOpen(true);
+                }}
+              >
                 Umów konsultację
-              </a>
+              </button>
             </div>
           </div>
 
@@ -60,9 +77,15 @@ const PsychologistServices = () => {
             </div>
             <p className={`${text2}`}>{servicesTexts.paragraph3}</p>
             <div className={`${buttonDiv}`}>
-              <a href="/enroll" className={`${button}`}>
+              <button
+                className={`${button}`}
+                onClick={() => {
+                  setSelectedConsultation(servicesTexts.title3);
+                  setIsOpen(true);
+                }}
+              >
                 Umów konsultację
-              </a>
+              </button>
             </div>
           </div>
 
@@ -70,11 +93,23 @@ const PsychologistServices = () => {
             <h2 className={`${title}`}>{servicesTexts.title4}</h2>
             <p className={`${text2} pt-[24px]`}>{servicesTexts.paragraph4}</p>
             <div className={`${buttonDiv}`}>
-              <a href="/enroll" className={`${button}`}>
+              <button
+                className={`${button}`}
+                onClick={() => {
+                  setSelectedConsultation(servicesTexts.title4);
+                  setIsOpen(true);
+                }}
+              >
                 Umów konsultację
-              </a>
+              </button>
             </div>
           </div>
+
+          <Modal
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            defaultConsultation={selectedConsultation}
+          />
         </div>
       </div>
     </div>

@@ -1,14 +1,15 @@
-import { useState, useForm } from "react-hook-form";
-import Input from "./Input";
-import DropdownInput from "./DropdownInput";
-import DatePickerInput from "./DatePickerInput";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import Input from "../../Modal/Input";
+import DatePickerInput from "../../Modal/DatePickerInput";
 import PropTypes from "prop-types";
-import { modal } from "./index.js";
+import { modal } from "../../Modal/index.js";
 
-const Modal = ({ open, onClose }) => {
+const Modal = ({ open, onClose, defaultConsultation }) => {
   Modal.propTypes = {
     open: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
+    defaultConsultation: PropTypes.string,
   };
 
   const button =
@@ -25,16 +26,17 @@ const Modal = ({ open, onClose }) => {
     formState: { errors },
     watch,
     reset,
+    setValue,
   } = useForm();
 
-   const [emailStatus, setEmailStatus] = useState("");
+  const [emailStatus, setEmailStatus] = useState("");
 
-   const onSubmit = async (date) => {
-     const emailData = {
-       from: "karolina.anna.jesionek@gmail.com",
-       to: "karolina-jesionek@wp.pl",
-       subject: "Nowa konsultacja",
-       html: `
+  const onSubmit = async (date) => {
+    const emailData = {
+      from: "karolina.anna.jesionek@gmail.com",
+      to: "karolina-jesionek@wp.pl",
+      subject: "Nowa konsultacja",
+      html: `
       <p>Imię i nazwisko: ${date.name}</p>
       <p>E-mail: ${date.email}</p>
       <p>Telefon: ${date.phone}</p>
@@ -44,34 +46,40 @@ const Modal = ({ open, onClose }) => {
       <br />
       <p>Treść wiadomości: <br /> ${date.message}</p>
     `,
-     };
+    };
 
-     try {
-       const response = await fetch("http://localhost:5000/api/send-email", {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(emailData),
-       });
+    try {
+      const response = await fetch("http://localhost:5000/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(emailData),
+      });
 
-       if (response.ok) {
-         setEmailStatus(
-           <span className="text-blue500">Wiadomość została wysłana!</span>
-         );
-       } else {
-         setEmailStatus(
-           <span className="text-red">Nie udało się wysłać wiadomości.</span>
-         );
-       }
-     } catch {
-       setEmailStatus(
-         <span className="text-red">
-           Wystąpił błąd podczas wysyłania wiadomości e-mail.
-         </span>
-       );
-     }
-   };
+      if (response.ok) {
+        setEmailStatus(
+          <span className="text-blue500">Wiadomość została wysłana!</span>
+        );
+      } else {
+        setEmailStatus(
+          <span className="text-red">Nie udało się wysłać wiadomości.</span>
+        );
+      }
+    } catch {
+      setEmailStatus(
+        <span className="text-red">
+          Wystąpił błąd podczas wysyłania wiadomości e-mail.
+        </span>
+      );
+    }
+  };
+
+  useEffect(() => {
+    if (defaultConsultation) {
+      setValue("consultation", defaultConsultation);
+    }
+  }, [defaultConsultation, setValue]);
 
   const handleClose = () => {
     reset();
@@ -130,7 +138,27 @@ const Modal = ({ open, onClose }) => {
             />
           ))}
 
-          <DropdownInput register={register} errors={errors} />
+          {/* type of  consultation */}
+
+          <div className={`${div}`}>
+            <label htmlFor="consultation" className={`${label}`}>
+              Rodzaj konsultacji
+            </label>
+            <input
+              id="consultation"
+              placeholder={defaultConsultation || "consultation"}
+              {...register("consultation")}
+              className={`${input}`}
+            />
+            {errors.consultation && (
+              <p className={`${error} ml-[15px]`}>
+                {errors.consultation.message}
+              </p>
+            )}
+          </div>
+
+          {/* date picker  */}
+
           <DatePickerInput register={register} errors={errors} />
 
           {/* time picker  */}
