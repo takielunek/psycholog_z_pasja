@@ -42,12 +42,24 @@ function Send() {
       });
 
       if (response.ok) {
-        setEmailStatus("Email sent successfully!");
+        setEmailStatus(
+          <span className="text-blue500">
+            Wiadomość została wysłana!
+          </span>
+        );
       } else {
-        setEmailStatus("Failed to send email.");
+        setEmailStatus(
+          <span className="text-red">
+            Nie udało się wysłać wiadomości.
+          </span>
+        );
       }
     } catch {
-      setEmailStatus("Error occurred while sending email.");
+      setEmailStatus(
+        <span className="text-red">
+          Wystąpił błąd podczas wysyłania wiadomości e-mail.
+        </span>
+      );
     }
   };
 
@@ -174,7 +186,11 @@ function Send() {
           <button type="submit" className={`${button}`}>
             Wyślij wiadomość
           </button>
-          {emailStatus && <p>{emailStatus}</p>}
+          {emailStatus && (
+            <p className=" text-[16px] sm:text-[18px] font-normal mt-[30px]">
+              {emailStatus}
+            </p>
+          )}
         </div>
       </form>
     </div>
