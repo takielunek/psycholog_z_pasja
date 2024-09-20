@@ -2,10 +2,12 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import MyDatePicker from "./MyDatePicker";
 
-const DatePickerInput = ({ register, errors }) => {
+const DatePickerInput = ({ register, errors, clearErrors, setValue }) => {
   DatePickerInput.propTypes = {
     register: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired,
+    clearErrors: PropTypes.func.isRequired,
+    setValue: PropTypes.func.isRequired,
   };
 
   const label = "text-[12px] font-normal text-gray901 font-roboto py-[3px]";
@@ -15,6 +17,14 @@ const DatePickerInput = ({ register, errors }) => {
   const error = "text-red text-[12px] font-normal font-roboto mt-[5px]";
 
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
+
+  const handleDateSelect = (date) => {
+    const formattedDate = date.toLocaleDateString("pl-PL");
+    setSelectedDate(formattedDate);
+     setValue("date", formattedDate);
+    clearErrors("date");
+  };
 
   return (
     <div className={`${div} relative`}>
@@ -24,7 +34,8 @@ const DatePickerInput = ({ register, errors }) => {
 
       <input
         id="date"
-        placeholder=" Wybierz datę"
+        placeholder="Wybierz datę"
+        value={selectedDate}
         {...register("date", { required: "Wybierz datę konsultacji" })}
         className={`${input}`}
         style={
@@ -34,6 +45,10 @@ const DatePickerInput = ({ register, errors }) => {
               }
             : {}
         }
+        onClick={() => {
+          setIsOpen(true);
+        }}
+        readOnly
       />
       <svg
         width="16"
@@ -41,7 +56,9 @@ const DatePickerInput = ({ register, errors }) => {
         viewBox="0 0 16 17"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-[15px] w-[15px] text-green hover:text-blue600 cursor-pointer absolute right-[15px] top-[50%] translate-y-[-50%]"
+        className={`${
+          errors.date ? "top-[40%]" : "top-[50%]"
+        } h-[15px] w-[15px] text-green hover:text-blue600 cursor-pointer absolute right-[15px] top-[50%] translate-y-[-50%]`}
         onClick={() => {
           setIsOpen(true);
         }}
@@ -51,7 +68,10 @@ const DatePickerInput = ({ register, errors }) => {
 
       {isOpen && (
         <div className="absolute z-10 top-[77px]">
-          <MyDatePicker onClose={() => setIsOpen(false)} />
+          <MyDatePicker
+            onClose={() => setIsOpen(false)}
+            onDateSelect={handleDateSelect}
+          />
         </div>
       )}
 
