@@ -2,7 +2,6 @@ import Header from "../components/MainPage/Header/Header";
 import ScopeOfAid from "../components/MainPage/ScopeOfAid/ScopeOfAid";
 import News from "../components/MainPage/News/News";
 import About from "../components/MainPage/About/About";
-import Footer from "../components/Footer/Footer";
 
 const MainPage = () => {
   return (
@@ -11,7 +10,6 @@ const MainPage = () => {
       <ScopeOfAid />
       <News />
       <About />
-      <Footer />
     </div>
   );
 };

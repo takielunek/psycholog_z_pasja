@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../Header/Header";
 import { servicesTexts } from "./index.js";
 import Modal from "../Modal/Modal";
+import ModalBg from "../../Modal/ModalBg/ModalBg";
 
 const PsychologistServices = () => {
   const box =
@@ -18,7 +19,7 @@ const PsychologistServices = () => {
   const buttonDiv = "absolute left-0 right-0 flex justify-center bottom-[40px]";
 
   const [isOpen, setIsOpen] = useState(false);
-    const [selectedConsultation, setSelectedConsultation] = useState(""); 
+  const [selectedConsultation, setSelectedConsultation] = useState("");
 
   return (
     <div>
@@ -110,6 +111,7 @@ const PsychologistServices = () => {
             onClose={() => setIsOpen(false)}
             defaultConsultation={selectedConsultation}
           />
+          <ModalBg open={isOpen} />
         </div>
       </div>
     </div>

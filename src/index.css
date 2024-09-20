@@ -121,18 +121,6 @@ input[type="checkbox"]:checked:after {
   background: #e5e5e5;
 }
 
-/* modal  */
-
-.modalBackground {
-  background: rgba(213, 220, 226, 0.8);
-  position: absolute;
-  z-index: 20;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 /* select  */
 
 select {

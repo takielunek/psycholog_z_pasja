@@ -2,6 +2,7 @@ import { useState } from "react";
 import chevron from "../../../assets/chevron.png";
 import { aidTexts } from "./index.js";
 import Modal from "../../Modal/Modal";
+import ModalBg from "../../Modal/ModalBg/ModalBg";
 
 const ScopeOfAid = () => {
   const button =
@@ -69,6 +70,7 @@ const ScopeOfAid = () => {
         Umów konsultację
       </button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)} />
+      <ModalBg open={isOpen} />
     </div>
   );
 };

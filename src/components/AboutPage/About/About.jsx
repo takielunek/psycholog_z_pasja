@@ -4,6 +4,8 @@ import martyna2 from "../../../assets/martyna2.png";
 // import SwiperComponent from "./SwiperComponent";
 import { aboutTexts } from "./index.js";
 import Modal from "../../Modal/Modal";
+import ModalBg from "../../Modal/ModalBg/ModalBg";
+
 
 const About = () => {
   const button =
@@ -15,6 +17,8 @@ const About = () => {
   const text2 = "text-[20px] xss:text-[24px] font-medium font-roboto";
 
   const [isOpen, setIsOpen] = useState(false);
+
+
 
   return (
     <div className="overflow-x-hidden">
@@ -49,8 +53,8 @@ const About = () => {
             >
               Umów konsultację
             </button>
-
             <Modal open={isOpen} onClose={() => setIsOpen(false)} />
+            <ModalBg open={isOpen} />
 
             <h3 className={`${text}`}>Edukacja i doświadczenie</h3>
             <p className={`${text1}`}>
