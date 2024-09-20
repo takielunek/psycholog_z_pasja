@@ -17,6 +17,7 @@ npm run dev
 * React Hook Form
 * React Icons
 * React Email
+* React DayPicker
 * AOS
 * Swiper
 * SendGrid
