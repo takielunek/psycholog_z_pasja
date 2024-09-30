@@ -1,4 +1,4 @@
-<p align="center">Psycholog z Pasją</p>
+# <p align="center">Psycholog z Pasją</p>
 
 ## General info
 The website was created for the needs of Psycholog z Pasją.
