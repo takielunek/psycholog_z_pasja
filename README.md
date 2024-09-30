@@ -1,14 +1,16 @@
+## **Psycholog z Pasją**
+
 ## General info
 The website was created for the needs of Psycholog z Pasją.
 
-## Getting Started
-First, run the development server:
+## 🛠️ Getting Started
+🏃‍♂️ Run the development server:
 
 ```
 npm run dev
 ```
 
-## Technologies
+## ⚡ Technologies
 * HTML
 * CSS
 * JavaScript
