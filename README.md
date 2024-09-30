@@ -35,6 +35,6 @@ npm run dev
 * Vite - Fast build tool for modern web projects ⚡
 
 
-## 📞 Contact
+## 📧 Contact
 [karolina.anna.jesionek@gmail.com](mailto:karolina.anna.jesionek@gmail.com) | [LinkedIn](https://www.linkedin.com/in/karolina-jesionek-frontend-developer/)
 
