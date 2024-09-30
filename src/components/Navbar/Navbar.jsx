@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-10 bg-blue600">
+    <div className="absolute top-0 left-0 right-0 z-20 bg-blue600">
       <div className="relative z-10 wrapper flex justify-between py-[13px] xl:py-[9px] px-[20px] xs:px-[50px] xl:px-[100px] xxl:px-[160.5px]">
         <a href="/">
           <img
