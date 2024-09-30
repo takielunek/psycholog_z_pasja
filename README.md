@@ -1,10 +1,17 @@
 # <p align="center">Psycholog z Pasją</p>
 
-## General info
+## 🚀 General info
 The website was created for the needs of Psycholog z Pasją.
 
 ## 🛠️ Getting Started
-🏃‍♂️ Run the development server:
+
+### Step 1: ⚙️ Install the dependencies
+
+```
+npm install
+```
+
+### Step 2: 🏃‍♂️ Run the development server
 
 ```
 npm run dev
