@@ -23,8 +23,8 @@ npm run dev
 * HTML - Standard markup language for web pages 🖥️
 * CSS - Styles for web document presentation 🎨
 * JavaScript - Enables interactivity on web pages ⚙️
-* Tailwind - A utility-first CSS framework 🎨
-* React - The library for building user interfaces 🔧
+* Tailwind CSS - A utility-first CSS framework 🎨
+* React.js - The library for building user interfaces 🔧
 * React Hook Form - Simplifies form management 📋
 * React Icons - Easy integration of icons ⭐
 * React Email - Send emails from React 📧
@@ -36,5 +36,6 @@ npm run dev
 
 
 ## 📧 Contact
-[karolina.anna.jesionek@gmail.com](mailto:karolina.anna.jesionek@gmail.com) | [LinkedIn](https://www.linkedin.com/in/karolina-jesionek-frontend-developer/)
+* Email: [karolina.anna.jesionek@gmail.com](mailto:karolina.anna.jesionek@gmail.com)
+* LinkedIn: [Karolina Jesionek - Junior Frontend Developer](https://www.linkedin.com/in/karolina-jesionek-frontend-developer/)
 
