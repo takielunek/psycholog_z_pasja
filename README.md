@@ -36,6 +36,5 @@ npm run dev
 
 
 ## 📞 Contact
-📧 [Karolina Jesionek](mailto:karolina.anna.jesionek@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/karolina-jesionek-frontend-developer/)
+[karolina.anna.jesionek@gmail.com](mailto:karolina.anna.jesionek@gmail.com) | [LinkedIn](https://www.linkedin.com/in/karolina-jesionek-frontend-developer/)
 
