@@ -3,7 +3,7 @@
 ## 🚀 General info
 The website was created for the needs of Psycholog z Pasją.
 
-![image alt](https://github.com/takielunek/psycholog_z_pasja/blob/3f1ebcd5f8b136595600bae3003e3d238f4d35fb/screenshot.png)
+![Website Screenshot](https://github.com/takielunek/psycholog_z_pasja/blob/3f1ebcd5f8b136595600bae3003e3d238f4d35fb/screenshot.png)
 
 ## 🛠️ Getting Started
 
@@ -33,3 +33,9 @@ npm run dev
 * Swiper - Touch slider for responsive interfaces 📱
 * SendGrid - Reliable email delivery service 📬
 * Vite - Fast build tool for modern web projects ⚡
+
+
+## 📞 Contact
+📧 [Karolina Jesionek](mailto:karolina.anna.jesionek@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/karolina-jesionek-frontend-developer/)
+
