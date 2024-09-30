@@ -3,6 +3,8 @@
 ## 🚀 General info
 The website was created for the needs of Psycholog z Pasją.
 
+![image alt](https://github.com/takielunek/psycholog_z_pasja/blob/3f1ebcd5f8b136595600bae3003e3d238f4d35fb/screenshot.png)
+
 ## 🛠️ Getting Started
 
 ### Step 1: ⚙️ Install the dependencies
